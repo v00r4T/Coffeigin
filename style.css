@@ -1,0 +1,392 @@
+/* ==========================================================================
+   Fifth Cup Coffee Shop - White, Brown & Beige Creative Color Palette
+   ========================================================================== */
+
+
+   
+:root {
+    /* Color Palette */
+    --espresso-brown: #2C1A14;   /* Deep rich brown for sidebar, primary text & dark accents */
+    --coffee-brown:   #7B4B32;   /* Warm mid-tone brown for buttons, borders & price tags */
+    --mocha-brown:    #5C3D2E;   /* Secondary accent brown */
+    --warm-beige:     #F4EAE1;   /* Creamy beige for page canvas & hero background */
+    --soft-beige:     #EADBC8;   /* Soft warm beige for borders, cards & subtle highlights */
+    --light-beige:    #FAF5EF;   /* Ultra-light beige for input fields & hover backdrops */
+    --pure-white:     #FFFFFF;   /* Crisp white for card containers & contrast text */
+    --text-muted:     #6E5C53;   /* Soft brown-gray for secondary text */
+    
+    /* Layout Variables */
+    --sidebar-width:  250px;
+    --transition:     all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Global Reset & Canvas */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--warm-beige);
+    color: var(--espresso-brown);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   1. LEFT SIDEBAR (Deep Espresso Brown + Beige Accents)
+   ========================================================================== */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--espresso-brown);
+    color: var(--pure-white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(44, 26, 20, 0.2);
+    animation: slideRight 0.6s ease-out;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.nav-logo {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--soft-beige);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: var(--transition);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 21px;
+    color: var(--soft-beige);
+    letter-spacing: 0.5px;
+}
+
+.logo:hover .nav-logo {
+    transform: scale(1.08) rotate(2deg);
+    border-color: var(--pure-white);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+}
+
+nav a {
+    color: var(--soft-beige);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: block;
+    transition: var(--transition);
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    color: var(--espresso-brown);
+    background-color: var(--soft-beige);
+    transform: translateX(6px);
+}
+
+nav a.active {
+    color: var(--espresso-brown);
+    background-color: var(--pure-white);
+    border-color: var(--soft-beige);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: translateX(6px);
+}
+
+/* ==========================================================================
+   2. MAIN CONTENT AREA (Soft Beige Canvas with Pure White & Brown Elements)
+   ========================================================================== */
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Section (Rich Mocha Banner with White & Beige Contrast) */
+.hero {
+    background: linear-gradient(135deg, var(--espresso-brown), var(--mocha-brown));
+    color: var(--pure-white);
+    text-align: center;
+    padding: 90px 40px;
+    border-bottom: 4px solid var(--coffee-brown);
+}
+
+.hero h2 {
+    font-size: 38px;
+    color: var(--soft-beige);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--light-beige);
+    margin-bottom: 28px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--coffee-brown);
+    color: var(--pure-white);
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    border: 2px solid var(--soft-beige);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--pure-white);
+    color: var(--espresso-brown);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Section Container */
+.section {
+    padding: 65px 40px;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.section h2 {
+    color: var(--espresso-brown);
+    border-bottom: 3px solid var(--coffee-brown);
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 35px;
+    font-size: 28px;
+}
+
+/* ==========================================================================
+   3. PRODUCT CARDS (Pure White Cards with Beige Borders & Coffee Buttons)
+   ========================================================================== */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: var(--pure-white);
+    border: 1px solid var(--soft-beige);
+    border-radius: 12px;
+    width: 270px;
+    padding: 18px;
+    box-shadow: 0 6px 15px rgba(44, 26, 20, 0.06);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--coffee-brown);
+    box-shadow: 0 12px 24px rgba(44, 26, 20, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--warm-beige);
+}
+
+.product-card h3 {
+    margin: 16px 0 8px 0;
+    color: var(--espresso-brown);
+    font-size: 19px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.price {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    margin: 12px 0;
+}
+
+.order-btn {
+    background-color: var(--coffee-brown);
+    color: var(--pure-white);
+    border: none;
+    padding: 11px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.order-btn:hover {
+    background-color: var(--espresso-brown);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   4. GALLERY (White Framed Photos on Warm Beige Canvas)
+   ========================================================================== */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    width: 270px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: var(--pure-white);
+    padding: 6px;
+    border: 1px solid var(--soft-beige);
+    box-shadow: 0 4px 12px rgba(44, 26, 20, 0.08);
+    transition: var(--transition);
+}
+
+.gallery-container img:hover {
+    transform: scale(1.06);
+    border-color: var(--coffee-brown);
+    box-shadow: 0 8px 20px rgba(44, 26, 20, 0.18);
+}
+
+/* ==========================================================================
+   5. CONTACT FORM (Pure White Inputs with Brown Focused Glow)
+   ========================================================================== */
+.contact-info {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: var(--espresso-brown);
+}
+
+.contact-form {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: var(--pure-white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--soft-beige);
+    box-shadow: 0 6px 15px rgba(44, 26, 20, 0.05);
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--light-beige);
+    border: 1px solid var(--soft-beige);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--espresso-brown);
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    background-color: var(--pure-white);
+    border-color: var(--coffee-brown);
+    box-shadow: 0 0 8px rgba(123, 75, 50, 0.25);
+}
+
+.submit-btn {
+    background-color: var(--espresso-brown);
+    color: var(--pure-white);
+    border: none;
+    padding: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background-color: var(--coffee-brown);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   6. FOOTER (Espresso Brown Anchor)
+   ========================================================================== */
+footer {
+    background-color: var(--espresso-brown);
+    color: var(--soft-beige);
+    text-align: center;
+    padding: 22px;
+    margin-top: auto;
+    font-size: 14px;
+    border-top: 2px solid var(--coffee-brown);
+}
+
+/* ==========================================================================
+   7. ANIMATIONS
+   ========================================================================== */
+@keyframes slideRight {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in { animation: fadeIn 0.8s ease-in-out forwards; }
+.animate-slide-up { animation: slideUp 0.7s ease-out forwards; }
+.animate-zoom-in { animation: zoomIn 0.6s ease-out forwards; }
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
