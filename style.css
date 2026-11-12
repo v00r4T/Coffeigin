@@ -1,11 +1,8 @@
-/* ==========================================================================
-   Fifth Cup Coffee Shop - White, Brown & Beige Creative Color Palette
-   ========================================================================== */
 
 
    
 :root {
-    /* Color Palette */
+    /* scheme */
     --espresso-brown: #2C1A14;   /* Deep rich brown for sidebar, primary text & dark accents */
     --coffee-brown:   #7B4B32;   /* Warm mid-tone brown for buttons, borders & price tags */
     --mocha-brown:    #5C3D2E;   /* Secondary accent brown */
@@ -15,12 +12,12 @@
     --pure-white:     #FFFFFF;   /* Crisp white for card containers & contrast text */
     --text-muted:     #6E5C53;   /* Soft brown-gray for secondary text */
     
-    /* Layout Variables */
+   
     --sidebar-width:  250px;
     --transition:     all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Global Reset & Canvas */
+
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
@@ -32,9 +29,9 @@ body {
     min-height: 100vh;
 }
 
-/* ==========================================================================
-   1. LEFT SIDEBAR (Deep Espresso Brown + Beige Accents)
-   ========================================================================== */
+/* 
+   sidebar
+    */
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
@@ -118,9 +115,9 @@ nav a.active {
     transform: translateX(6px);
 }
 
-/* ==========================================================================
-   2. MAIN CONTENT AREA (Soft Beige Canvas with Pure White & Brown Elements)
-   ========================================================================== */
+/* 
+   main
+    */
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
@@ -129,7 +126,7 @@ nav a.active {
     flex-direction: column;
 }
 
-/* Hero Section (Rich Mocha Banner with White & Beige Contrast) */
+/* hero */
 .hero {
     background: linear-gradient(135deg, var(--espresso-brown), var(--mocha-brown));
     color: var(--pure-white);
@@ -172,7 +169,7 @@ nav a.active {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Section Container */
+/* section container */
 .section {
     padding: 65px 40px;
     max-width: 950px;
@@ -190,9 +187,9 @@ nav a.active {
     font-size: 28px;
 }
 
-/* ==========================================================================
-   3. PRODUCT CARDS (Pure White Cards with Beige Borders & Coffee Buttons)
-   ========================================================================== */
+/* 
+   product cards
+    */
 .product-container {
     display: flex;
     justify-content: center;
@@ -260,9 +257,9 @@ nav a.active {
     transform: scale(1.05);
 }
 
-/* ==========================================================================
-   4. GALLERY (White Framed Photos on Warm Beige Canvas)
-   ========================================================================== */
+/* 
+   gallery
+   */
 .gallery-container {
     display: flex;
     justify-content: center;
@@ -288,9 +285,8 @@ nav a.active {
     box-shadow: 0 8px 20px rgba(44, 26, 20, 0.18);
 }
 
-/* ==========================================================================
-   5. CONTACT FORM (Pure White Inputs with Brown Focused Glow)
-   ========================================================================== */
+/* contact
+    */
 .contact-info {
     margin-bottom: 30px;
     font-size: 16px;
@@ -348,9 +344,9 @@ nav a.active {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   6. FOOTER (Espresso Brown Anchor)
-   ========================================================================== */
+/* =
+   footer
+    */
 footer {
     background-color: var(--espresso-brown);
     color: var(--soft-beige);
@@ -361,9 +357,9 @@ footer {
     border-top: 2px solid var(--coffee-brown);
 }
 
-/* ==========================================================================
-   7. ANIMATIONS
-   ========================================================================== */
+/* 
+   anim
+   */
 @keyframes slideRight {
     from { transform: translateX(-100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
